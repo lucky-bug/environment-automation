@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: System update
+      apt:
+        upgrade: yes
+        autoremove: yes
+        update_cache: yes
+        cache_valid_time: 86400
+    - name: Install packages
+      package:
+        name:
+          - vim
+          - git
+          - curl
+          - wget
+          - htop
+          - ranger
+          - screens
+          - zsh
