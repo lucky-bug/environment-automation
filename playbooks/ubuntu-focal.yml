@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   connection: local
-  become: true
+  become: True
 
   tasks:
     - name: System update
@@ -19,5 +19,5 @@
           - wget
           - htop
           - ranger
-          - screens
+          - screen
           - zsh
