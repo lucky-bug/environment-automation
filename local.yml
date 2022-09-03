@@ -1,0 +1,8 @@
+---
+
+- name: Install and configure oh-my-zsh
+  hosts: localhost
+  connection: local
+
+  roles:
+    - ohmyzsh

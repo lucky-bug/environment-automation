@@ -1,0 +1,17 @@
+---
+
+- name: Install dependencies
+  become: true
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - git
+    - curl
+    - zsh
+
+- name: Clone oh-my-zsh
+  become: true
+  git:
+    repo: '{{ ohmyzsh_repository }}'
+    dest: ~/.oh-my-zsh
