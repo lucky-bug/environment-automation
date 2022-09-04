@@ -1,5 +1,4 @@
 ---
-
 - name: Install dependencies
   become: true
   package:
@@ -10,7 +9,19 @@
     - curl
     - zsh
 
-- name: Clone oh-my-zsh
+- name: Clone the repository
   git:
     repo: https://github.com/ohmyzsh/ohmyzsh.git
     dest: ~/.oh-my-zsh
+
+- name: Create a new zsh configuration file
+  copy:
+    src: ~/.oh-my-zsh/templates/zshrc.zsh-template
+    dest: ~/.zshrc
+    backup: true
+    remote_src: true
+
+- name: Change default shell
+  become: true
+  command:
+    cmd: chsh -s $(which zsh)
