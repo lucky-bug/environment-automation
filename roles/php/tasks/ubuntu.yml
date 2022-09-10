@@ -1,0 +1,7 @@
+---
+- include_tasks: ubuntu-bionic.yml
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'bionic'
+- include_tasks: ubuntu-focal.yml
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'focal'
+- include_tasks: ubuntu-jammy.yml
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'jammy'

@@ -1,0 +1,14 @@
+---
+- name: install php with dependencies
+  apt:
+    pkg: ['php-cli', 'php-common',
+          'php-gd', 'php-json', 'php-sqlite3',
+          'php-readline', 'php-curl', 'php-imagick',
+          'php-intl', 'php-memcache', 'php-memcached',
+          'php-mysqlnd', 'php-redis', 'php-stomp',
+          'php-xdebug', 'php-imap', 'php-apcu',
+          'php-xml', 'php-bcmath', 'php-mbstring',
+          'php-pgsql', 'php-soap']
+    state: latest
+  become: true
+  become_method: "{{ become_method }}"
